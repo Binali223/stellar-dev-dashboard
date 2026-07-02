@@ -6,9 +6,9 @@
   "scripts": {
     "ml:train": "node src/ml/train.js",
     "ml:server": "node src/ml/server.js",
-    "dev": "vite",
-    "build": "vite build",
-    "build:analyze": "ANALYZE=1 vite build",
+    "dev": "node init && vite",
+    "build": "node init && vite build",
+    "build:analyze": "node init && ANALYZE=1 vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -37,7 +37,7 @@
     "ci:workflows": "bash scripts/validate-workflows.sh",
     "ci:testing": "npm run test:coverage && npm run test:coverage:check && npm run ci:workflows",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "node init && storybook build",
     "docs:api:generate": "node scripts/generate-api-docs.mjs",
     "api:start": "node api/server.js"
   },
